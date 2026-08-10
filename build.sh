@@ -13,11 +13,11 @@ function msg() {
 # Build LLVM
 msg "Building LLVM..."
 "$base"/build-llvm.py \
-    --llvm-folder "$base"/src/llvm-project \
     --vendor-string "StormBreaker" \
     --targets AArch64 ARM X86 \
     --pgo kernel-defconfig \
     --lto full \
+    --shallow-clone \
     --install-folder "$install" \
     --distribution-profile kernel \
     --build-targets distribution \
